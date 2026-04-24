@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
+
+output_dir = "plots"
+os.makedirs(output_dir, exist_ok=True)
 
 df = pd.read_csv('mental_health_risk_dataset.csv')
 
@@ -39,5 +43,4 @@ for i, (col, ru_name) in enumerate(numeric_cols_info):
         axes[j].axis('off')
 
 plt.tight_layout()
-plt.savefig('Распределения гистограм.png', dpi=150, bbox_inches='tight')
-print("Гистограммы распределений сохранены в файл 'Распределения гистограм.png'")
+plt.savefig('plots/Распределения гистограм.png', dpi=150, bbox_inches='tight')
